@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import Icon from '../../components/Icon';
@@ -10,6 +10,16 @@ import styles from './styles';
 
 const SectionIntro = () => {
     const classes = styles();
+
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        buscarDadosBanco();
+
+    }, []);
+
+    const buscarDadosBanco = () => {};
+
     return(
         <Container maxWidth='lg'>
             <Grid container justify="center" alignItems="center">
