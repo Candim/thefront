@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const styles = makeStyles (() => ({
     title:{
         fontFamily:"Lato,sans-serif",
-        fontSize: 36,
+        fontSize: 60,
         color:'#2d3748', 
 
     },
