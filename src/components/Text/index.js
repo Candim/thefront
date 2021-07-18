@@ -10,6 +10,16 @@ const Subtitle = ({ text, style}) =>{
     const classes = styles();
     return <h3 className={classes.subtitle} style={style}>{text}</h3>
 };
+const H3 = ( {text,style}) =>{
+    const classes = styles();
+    return (
+        <h3 className={classes.h3} style ={style}>
+            {text}
+
+        </h3>
+    )
+
+}
 
 const Body = ({text, style}) =>{
     const classes = styles();
@@ -17,4 +27,4 @@ const Body = ({text, style}) =>{
 };
 
 
-export {Title,Subtitle,Body};
+export {Title,Subtitle,Body,H3};

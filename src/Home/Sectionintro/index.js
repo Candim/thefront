@@ -8,17 +8,40 @@ import CodeIcon from '@material-ui/icons/Code';
 import {Title, Body, Subtitle} from '../../components/Text';
 import styles from './styles';
 
+
 const SectionIntro = () => {
     const classes = styles();
 
     const [posts, setPosts] = useState([]);
+   
 
     useEffect(() => {
         buscarDadosBanco();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[]);
+    
 
-    }, []);
-
-    const buscarDadosBanco = () => {};
+    const buscarDadosBanco = () => {
+    
+        const dados = [
+            {
+                icone: <LayersIcon className={classes.icon}/>,
+                titulo:"Build accessible React apps with speed",
+                texto:"Build a beautiful, modern website with flexible, fully customizable, atomic Material UI components.",   
+            },
+            {
+                icone: <SignalWifi4BarIcon className={classes.icon}/>,
+                titulo:"Built for developers",
+                texto:"TheFront is built to make your life easier. Variables, build tooling, documentation, and reusable components." ,
+            },
+            {
+                icone: <CodeIcon className={classes.icon}/>,
+                titulo:"Documentation for everything",
+                texto:"We've written extensive documentation for components and tools,so you never have to reverse engineer anything.", 
+            },
+        ];
+        setPosts(dados);
+    };
 
     return(
         <Container maxWidth='lg'>
@@ -36,32 +59,23 @@ const SectionIntro = () => {
             </Grid>   
 
             <Grid container justify="center" spacing={8}>
-                <Grid item md={3}>
-                    <Icon component={<LayersIcon className={classes.icon}/>} />
-                    <Subtitle text="Built for developers"/>
-                    <Body text="TheFront is built to make your life easier. Variables, build tooling,
-                    documentation, and reusable components." 
+
+                
+                {posts.map((item) =>(
+                    <Grid item md={4}>
+                    <Icon component={item.icone} />
+                    <Subtitle text={item.titulo} />
+                    <Body text={item.texto}
                     style={{color:'#718096'}} />
                 </Grid>
-                <Grid item md={3}>
-                <Icon component={<SignalWifi4BarIcon className={classes.icon}/>} />
-                <Subtitle text="Designed to be modern"/>
-                <Body text="Designed with the latest design trends in mind. TheFront feels modern,
-                 minimal, and beautiful."
-                style={{color:'#718096'}} />
-                </Grid>
-                <Grid item md={3}>
-                <Icon component={<CodeIcon className={classes.icon}/>} />
-                <Subtitle text="Documentation for everything"/>
-                <Body text="We've written extensive documentation for components and tools,
-                 so you never have to reverse engineer anything." 
-                 style={{color:'#718096'}} />
-                </Grid>
-            </Grid>
-        </Container>
+                ))}
 
-      
-    );
+
+               
+                </Grid>
+        </Container>
+        );
 };
 
-export default SectionIntro;
+
+export default SectionIntro ;

@@ -17,6 +17,13 @@ const styles = makeStyles (() => ({
         fontFamily:"Lato,sans-serif",
         fontSize: 14,
         color:'#2d3748',
+    H3:{
+        fontFamily:"Lato,sans-serif",
+        fontSize: "20px",
+        lineHeight:"30px",
+        fontWeight:400,
+        color:'#2d3748',
+    }
 
     
     },
